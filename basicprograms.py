@@ -117,6 +117,27 @@ def fibonacci(n):
 print(fibonacci(8))
 
 
+# check if a number is a fibonacci number:
+# interesting fact about fibonacci is, the (5*n*n+4) or (5*n*n-4) one or both is perfect square for a fibonacci number
+# So we need two functions here, one to check if a number is a perfect square. Another function judge the condition.
+def is_perfect_square(x):
+    s = int(math.sqrt(x))
+    return s * s == x
+
+
+def is_fibonacci(n):
+    a = 5 * n * n + 4
+    b = 5 * n * n - 4
+    if is_perfect_square(a) == True or is_perfect_square(b) == True:
+        return True
+    else:
+        False
+
+
+print("Is fibonacci:")
+print(is_fibonacci(13))
+
+
 # function to calculate the digits of the provided number:
 
 def order(x):
@@ -142,8 +163,8 @@ def isArmstrong(x):
     return sum1 == x
 
 
-#x = int(input("Enter a number: "))
-#print(isArmstrong(x))
+# x = int(input("Enter a number: "))
+# print(isArmstrong(x))
 
 # find area of a circle
 
@@ -173,7 +194,7 @@ def find_prime():
     print(empty_list)
 
 
-#print(find_prime())
+# print(find_prime())
 
 # function to check if a number is a prime number
 def is_prime(n):
@@ -184,4 +205,46 @@ def is_prime(n):
         else:
             return True
 
-print(is_prime(17))
+
+# print(is_prime(18))
+
+# Program to print ASCII value of a character:
+# find the ASCII value of G. We can find it using ord() function
+
+c = 'g'
+print("The ASCII value of " + c + " is ", ord(c))
+
+
+# Find the sum of squares of first n natural numbers
+
+def sum_natural_numbers(N):
+    if N == 1:
+        return 1
+    else:
+        return pow(N, 2) + (sum_natural_numbers(N - 1))
+
+
+X = 5
+print('sum:' + str(sum_natural_numbers(X)))
+
+# some natural number with the while loop:
+
+def sum_digits(n):
+    sum = 0
+    for i in range(1, n+1):
+        sum = sum + (i*i)
+    return sum
+
+print(sum_digits(5))
+
+# Find cube sum for n natural numbers:
+def sum_natural_numbers(N):
+    if N == 1:
+        return 1
+    else:
+        return pow(N, 3) + (sum_natural_numbers(N - 1))
+
+
+X = 3
+print('sum:' + str(sum_natural_numbers(X)))
+
