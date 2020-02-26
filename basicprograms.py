@@ -248,3 +248,23 @@ def sum_natural_numbers(N):
 X = 3
 print('sum:' + str(sum_natural_numbers(X)))
 
+
+# Find the number os white spaces in a string:
+
+def find_whiteSpace(strng):
+    count = 0
+    for a in strng:
+        if (a.isspace()) == True:
+            count = count + 1
+    print("Number of White space are: " + str(count))
+
+string = "My name is shuvo"
+find_whiteSpace(string)
+
+def replace_string(strng):
+
+    strng1 = strng.replace(input("what name you want to replace?"), input("With what name?"),1)
+    # number replace it as many times you want
+    print (strng1)
+
+replace_string(string)
