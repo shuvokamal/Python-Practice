@@ -5,3 +5,20 @@ for word in words:
     if reverse_word in words:
         anagrams[word] = (words.pop(words.index(reverse_word)))
 print(anagrams)
+
+longest prefix:
+
+strs = ["flower","flow","flight"]
+def prefix(strs):
+    longest_pre = ""
+    if not strs:
+        return longest_pre
+    min_str = min(strs, key=len)
+    
+    for i in range(len(min_str)):
+        if all(x.startswith(min_str[:i+1]) for x in strs):
+            longest_pre= min_str[:i+1]
+        else: break
+    return longest_pre
+        
+print(prefix(strs))
